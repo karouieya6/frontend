@@ -1,0 +1,16 @@
+<form (ngSubmit)="handleRegister()">
+    <input [(ngModel)]="email" name="email" type="email" placeholder="Email" required />
+    <input [(ngModel)]="username" name="username" type="text" placeholder="Username" required />
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required />
+  
+    <select [(ngModel)]="role" name="role">
+      <option value="STUDENT">Student</option>
+      <option value="INSTRUCTOR">Instructor</option>
+    </select>
+  
+    <button type="submit">Register</button>
+    <p>Already have an account?</p>
+<button type="button" (click)="goToLogin()">Login</button>
+
+  </form>
+  
