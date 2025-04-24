@@ -13,4 +13,15 @@ export class UserService {
   login(userData: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, userData);
   }
+  getEnrolledCourses(userId: number): Observable<any[]> {
+    const token = localStorage.getItem('token');
+  
+    const headers = {
+      'Authorization': `Bearer ${token}`
+    };
+  
+    // Make sure this URL matches the port of your EnrollmentService
+    return this.http.get<any[]>(`http://localhost:8080/api/enrollments/user/${userId}`, { headers });
+  }
+  
 }

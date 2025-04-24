@@ -1,0 +1,24 @@
+// src/assets/scss/main.scss
+.header__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%; // <-- Make sure height matches the header
+  
+    .header__search-2 {
+      margin-right: 10px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+  
+    .header__btn {
+      display: flex;
+      align-items: center;
+    }
+  
+    .sidebar__menu {
+      margin-left: 20px;
+    }
+  }
+  
