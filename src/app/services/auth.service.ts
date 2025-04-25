@@ -1,33 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  private baseUrl = 'http://localhost:8081/auth';
+export class UserService {
+  private userServiceUrl = 'http://localhost:8081/auth'; // for login
+  private enrollmentServiceUrl = 'http://localhost:8080/api/enrollments'; // for enrolled courses
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
-  login(data: any) {
-    return this.http.post(`${this.baseUrl}/login`, data);
+  login(userData: { email: string; password: string }): Observable<any> {
+    return this.http.post(`${this.userServiceUrl}/login`, userData);
   }
 
-  register(data: any) {
-    return this.http.post(`${this.baseUrl}/register`, data);
-  }
+  getEnrolledCourses(userId: number): Observable<any[]> {
+    const token = localStorage.getItem('token');
 
-  saveToken(token: string) {
-    localStorage.setItem('token', token);
-  }
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
 
-  logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
-  }
-
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem('token');
+    return this.http.get<any[]>(`${this.enrollmentServiceUrl}/user/${userId}`, { headers });
   }
 }

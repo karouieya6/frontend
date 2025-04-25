@@ -1,95 +1,75 @@
 <section class="slider__area p-relative">
-    <div #swiperContainer class="swiper hero-swiper">
-      <div class="swiper-wrapper">
-  
-        <!-- Slide 1 -->
-        <div class="swiper-slide single-slider slider__height slider__overlay d-flex align-items-center"
-          [ngStyle]="{background:'url(assets/img/slider/slider-4.jpg)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
-          <div class="container">
-            <div class="row">
-              <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
-                <div class="slider__content">
-                  <span>Learn & Achieve</span>
-                  <h3 class="slider__title">Corporate Learning. <span class="yellow-bg">Redefined</span>.</h3>
-                  <p>V-Learn helps companies train employees with powerful, modern learning tools.</p>
-                  <a [routerLink]="['/about']" class="e-btn slider__btn">Explore the Platform</a>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div #swiperContainer class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+
+     <!-- Slide 1 - Team Collaboration -->
+    <div class="swiper-slide single-slider slider__height slider__overlay d-flex align-items-center"
+    [ngStyle]="{background:'url(assets/img/slider/slider-5.jpg)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
+    <div class="container">
+    <div class="row">
+        <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
+        <div class="slider__content">
+            <span>Team Collaboration</span>
+            <h3 class="slider__title">Empower Your <span class="yellow-bg">Workforce</span></h3>
+            <p>Provide your teams with top-tier corporate training and measurable learning outcomes.</p>
+            <a [routerLink]="['/sign-up']" class="e-btn slider__btn">Start Training</a>
         </div>
-  
-        <!-- Slide 2 -->
-        <div class="swiper-slide single-slider slider__height slider__overlay d-flex align-items-center"
-          [ngStyle]="{background:'url(assets/img/slider/slider-1.jpg)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
-          <div class="container">
-            <div class="row">
-              <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
-                <div class="slider__content">
-                  <span>Learn & Achieve</span>
-                  <h3 class="slider__title">Upskill Your Team. <span class="yellow-bg">Faster</span>.</h3>
-                  <p>Track, manage, and boost learning experiences inside your company with V-Learn.</p>
-                  <a [routerLink]="['/about']" class="e-btn slider__btn">Start Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-  
-        <!-- Slide 3 -->
-        <div class="swiper-slide single-slider slider__height slider__overlay d-flex align-items-center"
-          [ngStyle]="{background:'url(assets/img/slider/slider-2.jpg)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
-          <div class="container">
-            <div class="row">
-              <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
-                <div class="slider__content">
-                  <span>Learn & Achieve</span>
-                  <h3 class="slider__title">Empower <span class="yellow-bg">Your Workforce</span></h3>
-                  <p>Deliver custom content and growth paths across departments — all in one place.</p>
-                  <a [routerLink]="['/about']" class="e-btn slider__btn">Get Started</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Slide 4 -->
-        <div class="swiper-slide single-slider slider__height slider__overlay d-flex align-items-center"
-          [ngStyle]="{background:'url(assets/img/slider/slider-3.jpg)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
-          <div class="container">
-            <div class="row">
-              <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
-                <div class="slider__content">
-                  <span>Learn & Achieve</span>
-                  <h3 class="slider__title">Launch your <span class="yellow-bg">online <img
-                    src="assets/img/shape/yellow-bg.png" alt=""> </span> learning Platform.</h3>
-                  <p>Join hundreds of businesses using V-Learn to transform corporate training.</p>
-                  <a [routerLink]="['/about']" class="e-btn slider__btn">Ready to Get Started?</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-  
-      <!-- Navigation and Pagination -->
-      <div class="swiper-pagination hero-pagination"></div>
-      <div class="swiper-button-prev hero-prev"></div>
-      <div class="swiper-button-next hero-next"></div>
     </div>
-  
-    <!-- Slider Bottom Navigation -->
-    <div class="row g-0">
-      <div *ngFor="let item of sliderNavData" class="d-none d-md-block col-md-6 col-lg-3">
-        <div class="slider__nav-item" [class]="item.bgColor"
-          [ngStyle]="{background:'url('+ item.img +')', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
-          <div class="slider__nav-content">
-            <span>{{ item.title }}</span>
-            <h4>{{ item.subtitle }}</h4>
-          </div>
+    </div>
+    </div>
+
+    <!-- Slide 2 - Business Presentation -->
+    <div class="swiper-slide single-slider slider__height slider__overlay d-flex align-items-center"
+    [ngStyle]="{background:'url(assets/img/slider/slider-6.jpg)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
+    <div class="container">
+    <div class="row">
+        <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
+        <div class="slider__content">
+            <span>Enterprise Learning</span>
+            <h3 class="slider__title">Smarter <span class="yellow-bg">Corporate Training</span></h3>
+            <p>Modern learning paths for every department — tailored, engaging, and efficient.</p>
+            <a [routerLink]="['/sign-up']" class="e-btn slider__btn">Join V-Learn</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Slide 3 - Growth & Innovation -->
+    <div class="swiper-slide single-slider slider__height slider__overlay d-flex align-items-center"
+    [ngStyle]="{background:'url(assets/img/slider/slider-7.jpeg)', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
+    <div class="container">
+    <div class="row">
+        <div class="col-xxl-7 col-xl-8 col-lg-9 col-md-9 col-sm-10">
+        <div class="slider__content">
+            <span>Learning Innovation</span>
+            <h3 class="slider__title">Train. <span class="yellow-bg">Grow. Lead.</span></h3>
+            <p>V-Learn powers digital transformation with scalable learning for modern businesses.</p>
+            <a [routerLink]="['/sign-up']" class="e-btn slider__btn">Get Started</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Navigation and Pagination -->
+    <div class="swiper-pagination hero-pagination"></div>
+    <div class="swiper-button-prev hero-prev"></div>
+    <div class="swiper-button-next hero-next"></div>
+  </div>
+
+  <!-- Slider Bottom Navigation -->
+  <div class="row g-0">
+    <div *ngFor="let item of sliderNavData" class="d-none d-md-block col-md-6 col-lg-3">
+      <div class="slider__nav-item" [class]="item.bgColor"
+        [ngStyle]="{background:'url('+ item.img +')', backgroundRepeat:'no-repeat', backgroundSize:'cover', backgroundPosition:'center'}">
+        <div class="slider__nav-content">
+          <span>{{ item.title }}</span>
+          <h4>{{ item.subtitle }}</h4>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

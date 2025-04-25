@@ -23,6 +23,14 @@
            <div class="sign__form">
              <form (ngSubmit)="onSubmit()" #form="ngForm">
                <div class="sign__input-wrapper mb-25">
+                  <h5>Username</h5>
+                  <div class="sign__input">
+                    <input type="text" name="username" [(ngModel)]="registerData.username" placeholder="Username" required>
+                    <i class="fal fa-user"></i>
+                  </div>
+                </div>
+                
+               <div class="sign__input-wrapper mb-25">
                  <h5>First Name</h5>
                  <div class="sign__input">
                    <input type="text" name="firstName" [(ngModel)]="registerData.firstName" placeholder="First name" required>

@@ -1036,5 +1036,36 @@
 	}
 }
 
-
-
+.header__search-2 {
+	margin-right: 20px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+  
+	svg {
+	  width: 18px;
+	  height: 18px;
+	  vertical-align: middle;
+	  transition: 0.3s ease;
+  
+	  .st0 {
+		fill: #ffffff; // Outer stroke or circle color
+	  }
+  
+	  .st1 {
+		fill: #ffffff; // Inner lens color
+	  }
+	}
+  
+	&:hover {
+	  svg {
+		.st0 {
+		  fill: #e4e4e4; // Optional hover effect (lighter)
+		}
+		.st1 {
+		  fill: #f2f2f2; // Optional hover effect
+		}
+	  }
+	}
+  }
+  

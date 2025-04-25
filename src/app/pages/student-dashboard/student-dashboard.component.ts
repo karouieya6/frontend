@@ -46,13 +46,14 @@ export class StudentDashboardComponent implements OnInit {
 
     // ✅ Get enrolled courses for this user
     this.userService.getEnrolledCourses(this.userId).subscribe({
-      next: (enrolled) => {
+      next: (enrolled: any[]) => {
         this.enrolledCourses = enrolled;
       },
-      error: (err) => {
-        console.error('Failed to load enrolled courses', err);
+      error: (err: any) => {
+        console.error(err);
       }
     });
+    
   }
 
   enroll(courseId: number) {

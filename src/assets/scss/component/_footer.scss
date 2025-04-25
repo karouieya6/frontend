@@ -216,3 +216,15 @@
         }
     }
 }
+.footer {
+    &__logo {
+      max-width: 160px;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+  

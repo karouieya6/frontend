@@ -54,23 +54,24 @@ export class HeroSliderComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      new Swiper('.hero-swiper', {
-        loop: true,
-        effect: 'fade',
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: '.hero-next',
-          prevEl: '.hero-prev',
-        },
-        pagination: {
-          el: '.hero-pagination',
-          clickable: true,
-        },
-      });
-    }, 0);
+    new Swiper(this.swiperContainer.nativeElement, {
+      loop: true,
+      effect: 'fade',
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.hero-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.hero-next',
+        prevEl: '.hero-prev',
+      },
+      fadeEffect: {
+        crossFade: true,
+      },
+    });
   }
-}
+} 
