@@ -20,9 +20,12 @@ export class SignInAreaComponent implements OnInit {
     email: '',
     password: ''
   };
-
+  public hideHeader: boolean = false;
   constructor(private http: HttpClient, private router: Router) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {this.router.events.subscribe(() => {
+    const currentRoute = this.router.url;
+    this.hideHeader = currentRoute.includes('/sign-in') || currentRoute.includes('/sign-up');
+  });}
 
   onLogin() {
     const payload = {

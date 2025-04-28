@@ -25,10 +25,17 @@ export class SignUpAreaComponent implements OnInit {
     password: '',
     confirmPassword: ''
   };
+  public hideHeader: boolean = false;
 
   constructor(private http: HttpClient , private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit()
+  : void {
+    this.router.events.subscribe(() => {
+      const currentRoute = this.router.url;
+      this.hideHeader = currentRoute.includes('/sign-in') || currentRoute.includes('/sign-up');
+    });
+  }
 
   onSubmit() {
     // 1. Check if passwords match
@@ -48,7 +55,7 @@ export class SignUpAreaComponent implements OnInit {
     };
   
     console.log('✅ Payload being sent:', payload);
-  
+    
     // 3. Send request with correct Content-Type
     this.http.post('http://localhost:8080/userservice/auth/register', payload, {
       headers: {
