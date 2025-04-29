@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, NavigationEnd ,Router} from '@angular/router';
 import { filter } from 'rxjs/operators';
+
 @Component({
   standalone: true,
   selector: 'app-header-three',
@@ -10,8 +11,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./header-three.component.scss']
 })
 export class HeaderThreeComponent implements OnInit {
-  public hideHeader = false;
-
+  
   headerSticky : boolean = false;
   searchBar : boolean = false;
   showSidebar : boolean = false;
@@ -69,14 +69,10 @@ export class HeaderThreeComponent implements OnInit {
 
 
   constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
-      const currentUrl = event.urlAfterRedirects || event.url;
-      this.hideHeader = currentUrl.includes('/sign-in') || currentUrl.includes('/sign-up');
-    });
+  ngOnInit(): void{}
+  isAuthPage(): boolean {
+    const url = this.router.url;
+    return url === '/sign-in' || url === '/sign-up';
   }
 
 }

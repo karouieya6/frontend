@@ -1,4 +1,4 @@
-<header>
+<header >
    <div id="header-sticky"
      [ngClass]="headerSticky ? 'header__area header__transparent header__padding-2 sticky' : 'header__area header__transparent header__padding-2'">
      <div class="container">
@@ -16,7 +16,7 @@
          </div>
  
          <!-- Menu (hidden on sign-in / sign-up) -->
-         <div class="col-xxl-6 col-xl-6 d-none d-xl-block" *ngIf="!hideHeader">
+         <div class="col-xxl-6 col-xl-6 d-none d-xl-block" *ngIf="!isAuthPage()">
            <div class="main-menu main-menu-3">
              <nav id="mobile-menu">
                <ul>
@@ -29,7 +29,7 @@
          </div>
  
          <!-- Search + Buttons (hidden on sign-in / sign-up) -->
-         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6" *ngIf="!hideHeader">
+         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-6" *ngIf="!isAuthPage()" >
            <div class="header__right d-flex justify-content-end align-items-center">
  
              <div class="header__search-2 mr-20" (click)="handleSearch()">
@@ -45,7 +45,7 @@
                </svg>
              </div>
  
-             <div class="header__auth-buttons d-flex align-items-center gap-10">
+             <div class="header__auth-buttons d-flex align-items-center gap-10" >
                <a [routerLink]="['/sign-up']" class="e-btn">Sign up</a>
                <a [routerLink]="['/sign-in']" class="e-btn">Sign in</a>
              </div>

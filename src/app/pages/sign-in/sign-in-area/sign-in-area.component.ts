@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+// keep this
 
 @Component({
   selector: 'app-sign-in-area',
@@ -20,12 +21,18 @@ export class SignInAreaComponent implements OnInit {
     email: '',
     password: ''
   };
-  public hideHeader: boolean = false;
-  constructor(private http: HttpClient, private router: Router) {}
-  ngOnInit(): void {this.router.events.subscribe(() => {
-    const currentRoute = this.router.url;
-    this.hideHeader = currentRoute.includes('/sign-in') || currentRoute.includes('/sign-up');
-  });}
+  ngOnInit(): void {
+    // you can leave it empty for now
+  }
+  public hideHeader: boolean = true;
+
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+ // inject here!
+  ) {}
+
+
 
   onLogin() {
     const payload = {
@@ -39,9 +46,9 @@ export class SignInAreaComponent implements OnInit {
       next: (res: any) => {
         console.log('✅ Login success:', res);
         alert('Welcome back!');
-        // Optionally save token
-        localStorage.setItem('token', res.token); // if backend returns JWT
-        this.router.navigate(['/dashboard']); // or student/instructor/admin dashboard
+        localStorage.setItem('token', res.token);
+        // 👇 Show header again after login
+        this.router.navigate(['/student-dashboard']);
       },
       error: (err) => {
         console.error('❌ Login failed:', err);
@@ -50,5 +57,3 @@ export class SignInAreaComponent implements OnInit {
     });
   }
 }
-
-

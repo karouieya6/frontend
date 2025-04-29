@@ -1,0 +1,68 @@
+.dashboard-wrapper {
+    padding: 2rem;
+  
+    .dashboard-title {
+      margin-bottom: 1rem;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  
+    .dashboard-cards {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+  
+      .card {
+        flex: 1;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  
+        .card-label {
+          font-size: 14px;
+          color: #555;
+        }
+  
+        .card-value {
+          font-size: 20px;
+          font-weight: bold;
+          color: #1a73e8;
+        }
+      }
+    }
+  
+    .course-list {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+  
+        th, td {
+          padding: 10px;
+          border-bottom: 1px solid #ddd;
+        }
+  
+        .progress {
+          background-color: #e9ecef;
+          height: 6px;
+          border-radius: 3px;
+  
+          .progress-bar {
+            height: 100%;
+            background-color: #28a745;
+            border-radius: 3px;
+          }
+        }
+  
+        .btn {
+          background-color: #007bff;
+          color: white;
+          padding: 6px 12px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  

@@ -25,7 +25,7 @@ export class SignUpAreaComponent implements OnInit {
     password: '',
     confirmPassword: ''
   };
-  public hideHeader: boolean = false;
+  public hideHeader: boolean = true;
 
   constructor(private http: HttpClient , private router: Router) {}
 

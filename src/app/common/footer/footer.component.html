@@ -1,4 +1,4 @@
-<footer>
+<footer *ngIf="!isAuthPage()">
     <div class="footer__area footer-bg">
        <div [ngClass]="footerPadd ? footerPadd : 'footer__top pt-190 pb-40' ">
           <div class="container">
