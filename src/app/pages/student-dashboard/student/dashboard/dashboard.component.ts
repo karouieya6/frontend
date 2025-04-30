@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { CounterStateComponent } from './components/counter-state/counter-state.component'
 import { CourseListComponent } from './components/course-list/course-list.component'
-import { SidebarComponent } from '../../../../layout/components/sidebar/sidebar.component'
+import { SidebarComponent } from '../sidebar/sidebar.component'
 @Component({
   selector: 'app-dashboard',
   standalone: true,

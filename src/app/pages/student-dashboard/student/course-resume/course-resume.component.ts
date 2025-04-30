@@ -9,7 +9,7 @@ import {
   NgbModal,
 } from '@ng-bootstrap/ng-bootstrap'
 import aos from 'aos'
-import { currency } from '@/app/common/constants'
+
 
 @Component({
   selector: 'app-course-resume',
@@ -25,7 +25,7 @@ import { currency } from '@/app/common/constants'
   styles: ``,
 })
 export class CourseResumeComponent implements OnInit {
-  currency = currency
+
   courses = CourseDetail
 
   private modalService = inject(NgbModal)

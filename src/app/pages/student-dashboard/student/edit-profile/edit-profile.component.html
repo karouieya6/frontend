@@ -1,0 +1,16 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSave()">
+    <input formControlName="firstName" placeholder="First name">
+    <input formControlName="lastName" placeholder="Last name">
+    <input formControlName="username" placeholder="Username">
+    <input formControlName="phone" placeholder="Phone number">
+    <button type="submit">Save changes</button>
+  </form>
+  
+  <h5>Update password</h5>
+  <form [formGroup]="passwordForm" (ngSubmit)="onPasswordChange()">
+    <input formControlName="currentPassword" placeholder="Current password" type="password">
+    <input formControlName="newPassword" placeholder="New password" type="password">
+    <input formControlName="confirmPassword" placeholder="Confirm password" type="password">
+    <button type="submit">Change password</button>
+  </form>
+  

@@ -10,43 +10,40 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeThreeComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      {
-        path: 'student-dashboard',
-        loadChildren: () =>
-          import('./pages/student-dashboard/student/student.route').then((m) => m.STUDENT_ROUTES),
-      }
+      { path: 'dashboard', component: DashboardComponent }  // ✅ You keep this
     ]
   },
-  // no header/footer
+
+  {
+    path: 'student',
+    loadChildren: () =>
+      import('./pages/student-dashboard/student/student.route').then(m => m.STUDENT_ROUTES)
+  },
+
   {
     path: 'sign-up',
     loadComponent: () =>
-      import('./pages/sign-up/sign-up-main/sign-up-main.component').then(
-        (m) => m.SignUpMainComponent
-      ),
+      import('./pages/sign-up/sign-up-main/sign-up-main.component').then(m => m.SignUpMainComponent)
   },
+
   {
     path: 'sign-in',
     loadComponent: () =>
-      import('./pages/sign-in/sign-in-main/sign-in-main.component').then(
-        (m) => m.SignInMainComponent
-      ),
+      import('./pages/sign-in/sign-in-main/sign-in-main.component').then(m => m.SignInMainComponent)
   },
+
   {
     path: 'forgot-password',
     loadComponent: () =>
-      import('./pages/forgot-password/forgot-password.component').then(
-        (m) => m.ForgotPasswordComponent
-      ),
+      import('./pages/forgot-password/forgot-password.component').then(m => m.ForgotPasswordComponent)
   },
+
   {
     path: 'reset-password',
     loadComponent: () =>
-      import('./pages/reset-password/reset-password.component').then(
-        (m) => m.ResetPasswordComponent
-      ),
+      import('./pages/reset-password/reset-password.component').then(m => m.ResetPasswordComponent)
   },
+
   {
     path: '**',
     redirectTo: 'home',

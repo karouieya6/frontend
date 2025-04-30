@@ -13,4 +13,8 @@ export class SidebarComponent {
     localStorage.removeItem('token');
     this.router.navigate(['/home']);
   }
+  logNav() {
+    console.log('Edit Profile clicked');
+  }
+  
 }

@@ -97,7 +97,9 @@ export class UserService {
       Authorization: `Bearer ${token}`,
     });
   }
-
+  changePassword(data: any) {
+    return this.http.put('/userservice/user/change-password', data);
+  }
   // Error handling utility
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

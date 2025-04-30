@@ -48,7 +48,7 @@ export class SignInAreaComponent implements OnInit {
         alert('Welcome back!');
         localStorage.setItem('token', res.token);
         // 👇 Show header again after login
-        this.router.navigate(['/student-dashboard']);
+        this.router.navigate(['/student/dashboard']);
       },
       error: (err) => {
         console.error('❌ Login failed:', err);
