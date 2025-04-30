@@ -7,17 +7,25 @@ import { FooterComponent } from '../app/common/footer/footer.component'; // or h
 import { HeaderThreeComponent } from './pages/Home/header-three/header-three.component';
 import { SignUpAreaComponent } from './pages/sign-up/sign-up-area/sign-up-area.component';
 import { SignInAreaComponent } from './pages/sign-in/sign-in-area/sign-in-area.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet ,HttpClientModule, HeaderThreeComponent, FooterComponent, SignUpAreaComponent,RouterModule,SignInAreaComponent],
+  imports: [RouterOutlet, HttpClientModule, HeaderThreeComponent, FooterComponent, SignUpAreaComponent, RouterModule, SignInAreaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   title = 'frontend-app';
   showHeaderFooter = true;
-  constructor(private router: Router) {}
+  isAuthPage = false;
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isAuthPage = event.url.includes('sign-in') || event.url.includes('sign-up');
+      }
+    });
+  }
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {

@@ -1,0 +1,42 @@
+<!-- Step 1: Replace your student sidebar with this simplified and cleaned version -->
+<!-- File: src/app/layout/components/sidebar/sidebar.component.html -->
+
+<nav class="student-sidebar bg-dark text-white">
+    <div class="sidebar-header p-3">
+      <h5 class="mb-0">Dashboard</h5>
+    </div>
+  
+    <ul class="nav flex-column px-2">
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/student/dashboard">
+          <i class="fas fa-home me-2"></i> Overview
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/student/course-list">
+          <i class="fas fa-book me-2"></i> My Courses
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/student/course-resume">
+          <i class="fas fa-clock me-2"></i> Course Resume
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/student/edit-profile">
+          <i class="fas fa-user-edit me-2"></i> Edit Profile
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/student/settings">
+          <i class="fas fa-cog me-2"></i> Settings
+        </a>
+      </li>
+      <li class="nav-item mt-3">
+        <button class="btn btn-outline-light w-100" (click)="logout()">
+          <i class="fas fa-sign-out-alt me-2"></i> Sign Out
+        </button>
+      </li>
+    </ul>
+  </nav>
+  
