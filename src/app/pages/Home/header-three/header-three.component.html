@@ -228,34 +228,5 @@
       </div>
     </div>
   </div>
-
-  <!-- Sidebar -->
-  <div class="sidebar" *ngIf="showSidebar">
-    <div class="sidebar__close" (click)="handleSidebarClose()" aria-label="Close sidebar">Close</div>
-    <ul>
-      <li><a [routerLink]="['/']" (click)="handleSidebarClose()">Home</a></li>
-      <li><a [routerLink]="['/courses']" (click)="handleSidebarClose()">Courses</a></li>
-      <li><a [routerLink]="['/contact']" (click)="handleSidebarClose()">Contact</a></li>
-      <!-- Auth Buttons in Sidebar (visible when not logged in) -->
-      <li *ngIf="!isLoggedIn">
-        <a [routerLink]="['/sign-up']" (click)="handleSidebarClose()">Sign up</a>
-      </li>
-      <li *ngIf="!isLoggedIn">
-        <a [routerLink]="['/sign-in']" (click)="handleSidebarClose()">Sign in</a>
-      </li>
-      <!-- Profile Options in Sidebar (visible when logged in) -->
-      <li *ngIf="isLoggedIn">
-        <a [routerLink]="['/edit-profile']" (click)="handleSidebarClose()">Edit Profile</a>
-      </li>
-      <li *ngIf="isLoggedIn">
-        <a [routerLink]="['/settings']" (click)="handleSidebarClose()">Account Settings</a>
-      </li>
-      <li *ngIf="isLoggedIn">
-        <a [routerLink]="['/help']" (click)="handleSidebarClose()">Help</a>
-      </li>
-      <li *ngIf="isLoggedIn">
-        <a (click)="logout(); handleSidebarClose()">Sign Out</a>
-      </li>
-    </ul>
-  </div>
+ 
 </header>

@@ -7,13 +7,7 @@ import { RouterModule } from '@angular/router';
     selector: 'app-main-layout',
     standalone: true,
     imports: [HeaderThreeComponent, FooterComponent, RouterModule,CommonModule],
-    template: `
-      <app-header-three />
-      <main class="main-content-area">
-        <router-outlet></router-outlet>
-      </main>
-      <app-footer />
-    `,
+    templateUrl: './mainlayout.component.html'
   })
   export class MainLayoutComponent {}
   

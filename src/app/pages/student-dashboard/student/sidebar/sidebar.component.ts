@@ -11,12 +11,7 @@ export class SidebarComponent {
 
   logout() {
     localStorage.removeItem('token');
-    window.location.href = '/';
-
+    localStorage.removeItem('user');
+    this.router.navigate(['/sign-in']);
   }
-  logNav() {
-    console.log("Navigating to edit-profile...");
-    this.router.navigate(['/student/edit-profile']);
-  }
-  
 }
