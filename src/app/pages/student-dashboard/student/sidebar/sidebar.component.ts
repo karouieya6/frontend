@@ -11,10 +11,12 @@ export class SidebarComponent {
 
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/home']);
+    window.location.href = '/';
+
   }
   logNav() {
-    console.log('Edit Profile clicked');
+    console.log("Navigating to edit-profile...");
+    this.router.navigate(['/student/edit-profile']);
   }
   
 }

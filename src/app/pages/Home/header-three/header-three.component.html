@@ -86,11 +86,8 @@
                 role="button"
                 aria-expanded="false"
               >
-                <img
-                  class="avatar-img rounded-circle"
-                  [src]="userProfilePic"
-                  alt="avatar"
-                />
+                <img [src]="userImageUrl || defaultAvatar" class="rounded-circle"  width="40"/>
+
               </a>
 
               <ul

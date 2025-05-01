@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeThreeComponent } from './pages/Home/home-three-main/home-three.component';
 import { DashboardComponent } from './pages/student-dashboard/student/dashboard/dashboard.component';
 import { MainLayoutComponent } from './pages/mainlayoutcomponent/mainlayout.component';
-
+import { AuthGuard } from './services/auth.guard';
 export const routes: Routes = [
   {
     path: '',
@@ -17,7 +17,8 @@ export const routes: Routes = [
   {
     path: 'student',
     loadChildren: () =>
-      import('./pages/student-dashboard/student/student.route').then(m => m.STUDENT_ROUTES)
+      import('./pages/student-dashboard/student/student.route').then(m => m.STUDENT_ROUTES),
+    canActivate: [AuthGuard]
   },
 
   {

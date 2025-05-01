@@ -97,15 +97,42 @@ export class UserService {
       Authorization: `Bearer ${token}`,
     });
   }
-  changePassword(data: any) {
-    return this.http.put('/userservice/user/change-password', data);
+  changePassword(data: any): Observable<any> {
+    const headers = this.getAuthHeaders();
+    return this.http.put(`${this.userApiUrl}/change-password`, data, {
+      headers,
+      responseType: 'text' // 👈 THIS is the key fix
+    }).pipe(
+      catchError(this.handleError('changePassword'))
+    );
   }
+  
   // Error handling utility
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
-      // Return a default result to keep the app running
-      return of(result as T);
+      throw error; // ⛔️ don't use `of(result as T)` here, or it will go to `.next()`
     };
   }
+  
+  uploadProfilePicture(userId: number, formData: FormData): Observable<string> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.getToken()}`
+    });
+  
+    return this.http.post(
+      `http://localhost:8080/userservice/user/${userId}/upload-profile`,
+      formData,
+      { headers, responseType: 'text' } // 👈 FIX: explicitly set responseType to 'text'
+    ).pipe(
+      tap((imageUrl) => {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        user.imageUrl = imageUrl;
+        localStorage.setItem('user', JSON.stringify(user));
+      }),
+      catchError(this.handleError<string>('uploadProfilePicture'))
+    );
+  }
+  
+  
 }
