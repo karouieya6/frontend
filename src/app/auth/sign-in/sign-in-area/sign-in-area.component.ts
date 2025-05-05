@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 // keep this
-
+import {jwtDecode} from 'jwt-decode';
 @Component({
   selector: 'app-sign-in-area',
   standalone: true,
@@ -39,7 +39,7 @@ export class SignInAreaComponent implements OnInit {
       email: this.loginData.email.trim(),
       password: this.loginData.password
     };
-
+  
     this.http.post('http://localhost:8080/userservice/auth/login', payload, {
       headers: { 'Content-Type': 'application/json' }
     }).subscribe({
@@ -47,12 +47,23 @@ export class SignInAreaComponent implements OnInit {
         console.log('✅ Login success:', res);
         alert('Welcome back!');
         localStorage.setItem('token', res.token);
-        // 👇 Show header again after login
-        this.router.navigate(['/student/dashboard']);
+  
+        // 👉 Decode token to get roles
+        const decodedToken: any = jwtDecode(res.token);
+        const roles: string[] = decodedToken.roles;
+  
+        // 👉 Redirect based on role
+        if (roles.includes('ADMIN')) {
+          this.router.navigate(['/admin/dashboard']);
+        } else if (roles.includes('INSTRUCTOR')) {
+          this.router.navigate(['/instructor/dashboard']);
+        } else {
+          this.router.navigate(['/student/dashboard']);
+        }
       },
       error: (err) => {
         console.error('❌ Login failed:', err);
-        alert('Invalid username or password.');
+        alert('Invalid email or password.');
       }
     });
   }

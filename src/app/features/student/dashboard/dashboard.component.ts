@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CounterStateComponent } from './components/counter-state/counter-state.component';
-import { CourseListComponent } from './components/course-list/course-list.component';
-import { SidebarComponent } from '../sidebar/sidebar.component';
-import { DashboardService } from '../../../../services/dashboard.service';
-import { UserService } from '../../../../services/user.service'; // adjust path if needed
+import { CourseListComponent } from '../course-list/course-list.component';
+import { SidebarComponent } from '../../../shared/sidebar/sidebar.component';
+import { DashboardService } from '../../../services/dashboard.service';
+import { UserService } from '../../../services/user.service'; // adjust path if needed
 
 @Component({
   selector: 'app-dashboard',

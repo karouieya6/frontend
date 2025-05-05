@@ -5,8 +5,8 @@ import { Router, NavigationEnd } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from '../app/common/footer/footer.component'; // or header-two
 import { HeaderThreeComponent } from './pages/Home/header-three/header-three.component';
-import { SignUpAreaComponent } from './pages/sign-up/sign-up-area/sign-up-area.component';
-import { SignInAreaComponent } from './pages/sign-in/sign-in-area/sign-in-area.component';
+import { SignUpAreaComponent } from './auth/sign-up/sign-up-area/sign-up-area.component';
+import { SignInAreaComponent } from './auth/sign-in/sign-in-area/sign-in-area.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 @Component({
